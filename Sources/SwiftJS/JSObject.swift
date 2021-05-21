@@ -257,12 +257,12 @@ extension JSObject {
     
     /// Tests whether an object can be called as a constructor.
     public var isConstructor: Bool {
-        return JSObjectIsConstructor(context.context, object)
+        return isObject && JSObjectIsConstructor(context.context, object)
     }
     
     /// Tests whether an object can be called as a function.
     public var isFunction: Bool {
-        return JSObjectIsFunction(context.context, object)
+        return isObject && JSObjectIsFunction(context.context, object)
     }
     
     /// Tests whether a JavaScript value’s type is the error type.
